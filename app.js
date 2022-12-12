@@ -1,41 +1,69 @@
+alert("Bienvenido a Hasbulla Store")
 
-alert("Bienvenido")
+const Hasbullas = [
+    { nombre: "Hasbulla Feliz", precio: 1000 },
+    { nombre: "Hasbulla Enojado", precio: 2000 },
+    { nombre: "Hasbulla Argentino", precio: 10000 },
+]
 
-//let Primernota = Number(prompt("ingrese su primer nota:"));
-//let Segundanota = Number(prompt("ingrese su segunda nota:"));
-//let Tercernota = Number(prompt("ingrese su tercer nota:"));
-//let Notafinal = ((Primernota + Segundanota + Tercernota) / 3);
+let carro = []
 
-let Notas;
-let Nnotas = Number(prompt("ingrese la cantidad de notas a promediar:"));
-let suma = 0;
+let opcion = prompt("Desea adquirir un Hasbulla?") 
 
-for(i=0; i < Nnotas; i++){
-    let notas = Number(prompt("ingrese su nota " + i))
-    suma = suma + notas;
+while(opcion != "si" && opcion != "no"){
+    alert("porfavor ingrese si o no")
+    opcion = prompt("Desea adquirir un Hasbulla?")
+;
 }
 
-let Notafinal = suma / Nnotas;
-
-
-
-
-aprobado()
-desaprobado()
-
-function aprobado(){
-    if (Notafinal >= 7){
-        console.log("Su nota final es "+ Notafinal + ", Aprobado")
-        alert("Su nota final es "+ Notafinal + ", Aprobado");
-    }
+if(opcion == "si"){
+    alert("a continuacion nuestro catalogo")
+    let productos = Hasbullas.map((Hasbullas) => Hasbullas.nombre + " " + Hasbullas.precio + "$");
+    alert(productos.join(", "))
+} else if (opcion == "no"){
+    alert("gracias por venir!!!")
 }
+
+while(opcion != "no"){
+    let productos = prompt("Que Hasbullas deseas?")
+    let precio = 0
+
+    if(productos == "Hasbulla Feliz" || productos == "Hasbulla Enojado" || productos == "Hasbulla Argentino"){
+        switch(productos){
+            case "Hasbulla Feliz":
+                precio = 1000
+                break;
+            case "Hasbulla Enojado":
+                precio = 2000
+                break;
+            case "Hasbulla Argentino":
+                precio = 10000
+                break;
+            default:
+                break;
+        }
+    let unidades = parseInt(prompt("Cuantos quiere llevar?"))  
     
+    carro.push({productos, unidades, precio})
+    console.log(carro)
+    } else {
+        alert("No tenemos ese Hasbulla")
+    }
 
-function desaprobado(){
-    if (Notafinal <= 6){
-        console.log("Su nota final es "+ Notafinal + ", Desaprobado")
-        alert("Su nota final es "+ Notafinal + ", Desaprobado")
+    opcion = prompt("desea algun Hasbulla mas?")
+
+    while(opcion === "no"){
+        alert("Gracias por su compra!!!")
+        carro.forEach((carroFinal) => {
+            console.log(`productos: ${carroFinal.productos}, unidades: ${carroFinal.unidades}, precio: ${carroFinal.precio}, total a pagar: ${carroFinal.unidades * carroFinal.precio}`)
+        })
+    break;
     }
 }
 
+const total = carro.reduce((acc, el) => acc + el.precio * el.unidades, 0)
+console.log(`el monto total por sus Hasbullas es de:  ${total}`)
+alert(`el monto total por sus Hasbullas es de:  ${total}`)
+
+alert("Gracias por confiar en nosotros!!")
 
