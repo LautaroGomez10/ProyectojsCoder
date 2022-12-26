@@ -4,38 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
+  <!--HEADER-->
+
     <header class="header sticky-top">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-              <button class="navbar-toggler navbotonmio" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link navmio" href="index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link navmio" href="pages/acercade.html">Acerca de</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link navmio" href="pages/trayectoria.html">Trayectoria</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link navmio" href="pages/galeria.html">Galeria</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link navmio" href="pages/contacto.html">Contacto</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a id="carro" class="nav-link" href="#">🛒</a>
+        </li>
+        </li>
+      </ul>
     </header>
-    <img src="./Assets/Images/HASBU.jpg" alt="">
-    <script src="app.js"></script>
+
+  <!--MAIN-->
+
+  <div id="hasbu1" class="card container-fluid" style="width: 18rem;">
+    <img src="./Assets/Images/HASBU.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Hasbulla Feliz</h5>
+      <p class="card-text">Precio: $1000</p>
+      <a href="#" id="agregar" class="btn btn-primary">Comprar</a>
+    </div>
+  </div>
+    
+  <script src="app.js"></script>
 </body>
 </html>
